@@ -73,24 +73,71 @@
     <div class="glass-container">
         <div class="invitation-content">
             <p class="subtitle">Sruthi & Surya's E-Invite</p>
+            
+            <div style="width: 100%; max-width: 400px; margin: 0 auto 2rem; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+                <img src="photo.png" alt="Sruthi & Surya Engagement" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+
             <h1 class="title">You're <span>Invited!</span></h1>
 
-            <p class="detail-item" style="justify-content: center; text-align: center; font-size: 1.2rem;">
+            <p class="detail-item" style="justify-content: center; text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
                 Please join us to celebrate with Sruthi & Surya.
             </p>
+
+            <div class="details-section" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 2rem; background: rgba(255, 255, 255, 0.4); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 10px rgba(255,255,255,0.5);">
+                <div class="detail-row" style="display: flex; align-items: flex-start; gap: 12px; text-align: left;">
+                    <span class="icon" style="font-size: 1.4rem;">🗓️</span>
+                    <div>
+                        <strong style="color: var(--primary-color); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">When</strong>
+                        <span style="font-size: 1.05rem; font-weight: 500;">Saturday, August 15th, 2026<br>at 5:00 PM</span>
+                    </div>
+                </div>
+                <div class="detail-row" style="display: flex; align-items: flex-start; gap: 12px; text-align: left;">
+                    <span class="icon" style="font-size: 1.4rem;">📍</span>
+                    <div>
+                        <strong style="color: var(--primary-color); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Where</strong>
+                        <span style="font-size: 1.05rem; font-weight: 500;">The Grand Venue<br>Minneapolis, MN</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="rsvp-section">
                 <h2 class="rsvp-title">RSVP</h2>
 
                 <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Full Name" class="glass-input" required>
-                        <input type="email" name="email" placeholder="Your Email Address" class="glass-input" required>
-                        <select name="attending" class="glass-input" required>
-                            <option value="" disabled selected>Will you be joining us?</option>
-                            <option value="Yes">Joyfully Accept</option>
-                            <option value="No">Regretfully Decline</option>
-                        </select>
+                        <div style="text-align: left; width: 100%;">
+                            <label for="name" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" class="glass-input" required>
+                        </div>
+                        
+                        <div style="text-align: left; width: 100%;">
+                            <label for="email" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" class="glass-input" required>
+                        </div>
+                        
+                        <div style="text-align: left; width: 100%;">
+                            <label for="attending" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Will you be joining us?</label>
+                            <select id="attending" name="attending" class="glass-input" required>
+                                <option value="" disabled selected>Please select...</option>
+                                <option value="Yes">Joyfully Accept</option>
+                                <option value="No">Regretfully Decline</option>
+                            </select>
+                        </div>
+
+                        <div style="text-align: left; width: 100%;">
+                            <label for="guests" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Additional Guests (Plus Ones)</label>
+                            <select id="guests" name="guests" class="glass-input">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+
+                        <div style="text-align: left; width: 100%;">
+                            <label for="dietary" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Any dietary restrictions?</label>
+                            <textarea id="dietary" name="dietary" placeholder="e.g., Vegetarian, Peanut allergy..." class="glass-input" rows="2" style="resize: vertical;"></textarea>
+                        </div>
                     </div>
 
                     <button type="submit" class="rsvp-btn">Submit RSVP</button>
