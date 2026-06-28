@@ -127,6 +127,7 @@
                         <div id="members-section" style="display: none; text-align: left; width: 100%; margin-top: 5px;">
                             <label for="members" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">How many members are attending?</label>
                             <select id="members" name="members" class="glass-input">
+                                <option value="" disabled selected>Please select a number...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -153,12 +154,15 @@
         function toggleMembers() {
             const attendingSelect = document.getElementById('attending');
             const membersSection = document.getElementById('members-section');
+            const membersInput = document.getElementById('members');
             
             // Show the dropdown if they say Yes, hide it if they say No
             if (attendingSelect.value === 'Yes') {
                 membersSection.style.display = 'block';
+                membersInput.required = true;
             } else {
                 membersSection.style.display = 'none';
+                membersInput.required = false;
             }
         }
     </script>
