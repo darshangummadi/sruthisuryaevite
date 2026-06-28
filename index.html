@@ -1,19 +1,118 @@
-Sruthi & Surya's E-Invite
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sruthi & Surya's E-Invite</title>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional form styles for the RSVP section */
+        .rsvp-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
 
+        .rsvp-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            align-items: center;
+        }
 
-You're Invited!
-Please join us to celebrate with Sruthi & Surya.
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 1.5rem;
+        }
 
-RSVP
+        .form-question {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            text-align: center;
+        }
 
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
 
+        .radio-label:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
 
+        input[type="radio"] {
+            accent-color: var(--primary-color);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
+<body>
+    <div class="glass-container">
+        <div class="invitation-content">
+            <p class="subtitle">Sruthi & Surya's E-Invite</p>
+            <h1 class="title">You're <span>Invited!</span></h1>
 
-Will you be joining us?
-Joyfully Accept
-Regretfully Decline
+            <p class="detail-item" style="justify-content: center; text-align: center; font-size: 1.2rem;">
+                Please join us to celebrate with Sruthi & Surya.
+            </p>
 
-Submit RSVP
+            <div class="rsvp-section">
+                <h2 class="rsvp-title">RSVP</h2>
+
+                <form class="rsvp-form">
+                    <div class="form-group">
+                        <p class="form-question">Will you be joining us?</p>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="accept">
+                            Joyfully Accept
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="decline">
+                            Regretfully Decline
+                        </label>
+                    </div>
+
+                    <button type="button" class="rsvp-btn">Submit RSVP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background dynamic elements -->
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+</body>
+
+</html>
