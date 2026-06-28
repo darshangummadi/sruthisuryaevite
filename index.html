@@ -104,39 +104,35 @@
             <div class="rsvp-section">
                 <h2 class="rsvp-title">RSVP</h2>
 
-                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST">
+                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST" id="rsvpForm">
+                    <!-- Redirect post-submit -->
+                    <input type="hidden" name="_next" value="https://darshangummadi.github.io/sruthisuryaevite/thank-you.html">
+
                     <div class="form-group">
                         <div style="text-align: left; width: 100%;">
-                            <label for="name" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" class="glass-input" required>
+                            <label for="name" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g., Anand and family, or Just me" class="glass-input" required>
                         </div>
                         
                         <div style="text-align: left; width: 100%;">
-                            <label for="email" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" class="glass-input" required>
-                        </div>
-                        
-                        <div style="text-align: left; width: 100%;">
-                            <label for="attending" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Will you be joining us?</label>
-                            <select id="attending" name="attending" class="glass-input" required>
+                            <label for="attending" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Will you be attending?</label>
+                            <select id="attending" name="attending" class="glass-input" required onchange="toggleMembers()">
                                 <option value="" disabled selected>Please select...</option>
-                                <option value="Yes">Joyfully Accept</option>
-                                <option value="No">Regretfully Decline</option>
+                                <option value="Yes">Yes, we wouldn't miss it!</option>
+                                <option value="No">No, unfortunately we can't make it.</option>
                             </select>
                         </div>
 
-                        <div style="text-align: left; width: 100%;">
-                            <label for="guests" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Additional Guests (Plus Ones)</label>
-                            <select id="guests" name="guests" class="glass-input">
-                                <option value="0">0</option>
+                        <!-- Hidden by default -->
+                        <div id="members-section" style="display: none; text-align: left; width: 100%; margin-top: 5px;">
+                            <label for="members" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">How many members are attending?</label>
+                            <select id="members" name="members" class="glass-input">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5+</option>
                             </select>
-                        </div>
-
-                        <div style="text-align: left; width: 100%;">
-                            <label for="dietary" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Any dietary restrictions?</label>
-                            <textarea id="dietary" name="dietary" placeholder="e.g., Vegetarian, Peanut allergy..." class="glass-input" rows="2" style="resize: vertical;"></textarea>
                         </div>
                     </div>
 
@@ -152,6 +148,20 @@
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
+
+    <script>
+        function toggleMembers() {
+            const attendingSelect = document.getElementById('attending');
+            const membersSection = document.getElementById('members-section');
+            
+            // Show the dropdown if they say Yes, hide it if they say No
+            if (attendingSelect.value === 'Yes') {
+                membersSection.style.display = 'block';
+            } else {
+                membersSection.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 
 </html>

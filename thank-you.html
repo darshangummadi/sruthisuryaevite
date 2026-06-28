@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Sruthi & Surya's E-Invite</title>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .thank-you-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .thank-you-message {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+        }
+        .back-btn {
+            display: inline-block;
+            background: var(--text-dark);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 20px rgba(44, 62, 80, 0.15);
+        }
+        .back-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container thank-you-container">
+        <h1 class="thank-you-title">Thank You!</h1>
+        <p class="thank-you-message">
+            We have received your RSVP.<br>
+            We are so excited and can't wait to celebrate this special day with you!
+        </p>
+        <a href="index.html" class="back-btn">Return to Invite</a>
+    </div>
+    
+    <!-- Background dynamic elements -->
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+</body>
+</html>
