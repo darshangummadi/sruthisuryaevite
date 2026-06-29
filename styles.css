@@ -68,18 +68,6 @@ body {
     animation-duration: 15s;
 }
 
-.blob-3 {
-    width: 30vw;
-    height: 30vw;
-    background: #fffacd;
-    /* Lemon chiffon */
-    top: 40vh;
-    left: 40vw;
-    border-radius: 50%;
-    animation-delay: -3s;
-    animation-duration: 10s;
-}
-
 @keyframes float {
     0% {
         transform: translate(0, 0) scale(1);
