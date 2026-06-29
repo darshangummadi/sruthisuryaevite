@@ -84,19 +84,73 @@
                 Please join us to celebrate with Sruthi & Surya.
             </p>
 
-            <div class="details-section" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 2rem; background: rgba(255, 255, 255, 0.4); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: inset 0 0 10px rgba(255,255,255,0.5);">
-                <div class="detail-row" style="display: flex; align-items: flex-start; gap: 12px; text-align: left;">
-                    <span class="icon" style="font-size: 1.4rem;">🗓️</span>
-                    <div>
-                        <strong style="color: var(--primary-color); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">When</strong>
-                        <span style="font-size: 1.05rem; font-weight: 500;">Sunday, August 30th, 2026<br>at 10:00 AM</span>
+            <div class="schedule-container">
+                <!-- Day 1: Aug 28th -->
+                <div class="event-day-card">
+                    <div class="day-title">August 28th, 2026</div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Haldi</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Morning</span>
+                            <span class="event-detail-pill">📍 Boise (TBD)</span>
+                            <span class="event-detail-pill">👗 Yellow Outfits</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Mehendi</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Evening</span>
+                            <span class="event-detail-pill">📍 Boise (TBD)</span>
+                            <span class="event-detail-pill">👗 Casual/None</span>
+                        </div>
                     </div>
                 </div>
-                <div class="detail-row" style="display: flex; align-items: flex-start; gap: 12px; text-align: left;">
-                    <span class="icon" style="font-size: 1.4rem;">📍</span>
-                    <div>
-                        <strong style="color: var(--primary-color); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Where</strong>
-                        <span style="font-size: 1.05rem; font-weight: 500;">Boise<br>Idaho</span>
+
+                <!-- Day 2: Aug 29th -->
+                <div class="event-day-card">
+                    <div class="day-title">August 29th, 2026</div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Snathakam</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Early Morning</span>
+                            <span class="event-detail-pill">📍 Boise (TBD)</span>
+                            <span class="event-detail-pill">👗 Indian</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Pellikoduku</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Morning</span>
+                            <span class="event-detail-pill">📍 Boise (TBD)</span>
+                            <span class="event-detail-pill">👗 Indian</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Pellikuturu</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Afternoon</span>
+                            <span class="event-detail-pill">📍 Boise (TBD)</span>
+                            <span class="event-detail-pill">👗 Indian</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3: Aug 30th -->
+                <div class="event-day-card">
+                    <div class="day-title">August 30th, 2026</div>
+                    
+                    <div class="event-item">
+                        <div class="event-name">Wedding Ceremony</div>
+                        <div class="event-details">
+                            <span class="event-detail-pill">⏰ Morning</span>
+                            <span class="event-detail-pill">📍 3160 Cool Water Ln, Emmett, ID</span>
+                            <span class="event-detail-pill">👗 Indian</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,16 +178,46 @@
                         </div>
 
                         <!-- Hidden by default -->
-                        <div id="members-section" style="display: none; text-align: left; width: 100%; margin-top: 5px;">
-                            <label for="members" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">How many members are attending?</label>
-                            <select id="members" name="members" class="glass-input">
-                                <option value="" disabled selected>Please select a number...</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5+">5+</option>
-                            </select>
+                        <div id="members-section" style="display: none; text-align: left; width: 100%; margin-top: 15px; flex-direction: column; gap: 15px;">
+                            
+                            <div>
+                                <label for="attend_aug28" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Attending August 28th Events?</label>
+                                <select id="attend_aug28" name="attend_aug28" class="glass-input extra-required">
+                                    <option value="" disabled selected>Please select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="attend_aug29" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Attending August 29th Events?</label>
+                                <select id="attend_aug29" name="attend_aug29" class="glass-input extra-required">
+                                    <option value="" disabled selected>Please select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="attend_aug30" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">Attending August 30th Wedding?</label>
+                                <select id="attend_aug30" name="attend_aug30" class="glass-input extra-required">
+                                    <option value="" disabled selected>Please select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="members" style="font-size: 0.9rem; color: var(--text-dark); font-weight: 600; margin-bottom: 5px; display: block; margin-left: 5px;">How many members are attending?</label>
+                                <select id="members" name="members" class="glass-input extra-required">
+                                    <option value="" disabled selected>Please select a number...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -151,18 +235,23 @@
     </div>
 
     <script>
+        // Ensure hidden state on load
+        document.getElementById('members-section').style.display = 'none';
+
         function toggleMembers() {
             const attendingSelect = document.getElementById('attending');
             const membersSection = document.getElementById('members-section');
-            const membersInput = document.getElementById('members');
+            const extraInputs = document.querySelectorAll('.extra-required');
             
-            // Show the dropdown if they say Yes, hide it if they say No
             if (attendingSelect.value === 'Yes') {
-                membersSection.style.display = 'block';
-                membersInput.required = true;
+                membersSection.style.display = 'flex';
+                extraInputs.forEach(input => input.required = true);
             } else {
                 membersSection.style.display = 'none';
-                membersInput.required = false;
+                extraInputs.forEach(input => {
+                    input.required = false;
+                    input.value = ''; // Reset values when hidden
+                });
             }
         }
     </script>
