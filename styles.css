@@ -66,7 +66,7 @@ body {
 
 .title {
     font-family: var(--font-heading);
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 3.5rem;
@@ -76,7 +76,7 @@ body {
 .title span {
     color: var(--primary-color);
     font-style: italic;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     display: inline-block;
     margin: 0 12px;
 }
@@ -146,11 +146,11 @@ body {
     }
 
     .title {
-        font-size: 3.2rem;
+        font-size: 2.2rem;
     }
 
     .title span {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .details {
@@ -296,4 +296,132 @@ body {
     .full-width-card {
         aspect-ratio: 4 / 3;
     }
+}
+
+/* Countdown Timer Styles */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 65px;
+}
+
+.countdown-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+@media (max-width: 400px) {
+    .countdown-container {
+        gap: 8px;
+    }
+    .countdown-box {
+        padding: 8px 10px;
+        min-width: 55px;
+    }
+    .countdown-number {
+        font-size: 1.4rem;
+    }
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Contact FAB and Modal */
+.contact-fab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.contact-fab:hover {
+    transform: scale(1.1);
+}
+
+.contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 90%;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.contact-modal-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    opacity: 0.6;
+    line-height: 1;
+}
+
+.contact-modal-close:hover {
+    opacity: 1;
 }

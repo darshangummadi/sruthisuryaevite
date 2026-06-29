@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sruthi & Surya's E-Invite</title>
+    <title>Sruthi & Surya's Wedding Invitation</title>
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,7 @@
 <body>
     <div class="glass-container">
         <div class="invitation-content">
-            <p class="subtitle">Sruthi & Surya's E-Invite</p>
+            <p class="subtitle">Sruthi & Surya's Wedding Invitation</p>
 
             <div
                 style="width: 100%; max-width: 400px; margin: 0 auto 2rem; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
@@ -80,12 +80,29 @@
                     style="width: 100%; height: auto; display: block; object-fit: cover;">
             </div>
 
-            <h1 class="title">You're <span>Invited!</span></h1>
+            <h1 class="title"><span>It’s finally happening!</span><br>Come celebrate with us!</h1>
 
-            <p class="detail-item"
-                style="justify-content: center; text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
-                Please join us to celebrate with Sruthi & Surya.
-            </p>
+
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container" id="countdown-timer">
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cd-days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cd-hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cd-minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cd-seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
 
             <div class="schedule-container">
                 <!-- Day 1: Aug 28th -->
@@ -117,8 +134,10 @@
                 </div>
 
                 <!-- Day 2: Aug 29th -->
-                <div class="event-day-card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
-                    <div class="day-title" style="margin-bottom: 0.5rem; text-align: left; padding-left: 0.5rem;">August 29th, 2026</div>
+                <div class="event-day-card"
+                    style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                    <div class="day-title" style="margin-bottom: 0.5rem; text-align: left; padding-left: 0.5rem;">August
+                        29th, 2026</div>
                     <div class="events-grid">
                         <div class="event-image-card">
                             <img src="snathakam.jpeg" alt="Snathakam Ceremony">
@@ -143,8 +162,10 @@
                 </div>
 
                 <!-- Day 3: Aug 30th -->
-                <div class="event-day-card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
-                    <div class="day-title" style="margin-bottom: 0.5rem; text-align: left; padding-left: 0.5rem;">August 30th, 2026</div>
+                <div class="event-day-card"
+                    style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                    <div class="day-title" style="margin-bottom: 0.5rem; text-align: left; padding-left: 0.5rem;">August
+                        30th, 2026</div>
                     <div class="events-grid">
                         <div class="event-image-card full-width-card">
                             <img src="marriage.jpeg" alt="Wedding Ceremony">
@@ -249,6 +270,40 @@
 
 
     <script>
+        // Contact Modal Logic
+        function toggleContactModal() {
+            const modal = document.getElementById('contactModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+
+        // Countdown Logic
+        const targetDate = new Date("August 30, 2026 10:49:00").getTime();
+
+        const countdownInterval = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown-timer").innerHTML = "<div style='font-size: 1.2rem; font-weight: bold; color: var(--primary-color);'>The wedding has begun!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("cd-days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("cd-minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("cd-seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+
         // Ensure hidden state on load
         document.getElementById('members-section').style.display = 'none';
 
@@ -269,6 +324,30 @@
             }
         }
     </script>
+
+    <!-- Contact Floating Action Button -->
+    <div class="contact-fab" onclick="toggleContactModal()">
+        📞
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal-overlay" id="contactModal" onclick="toggleContactModal()">
+        <div class="contact-modal-content" onclick="event.stopPropagation()">
+            <button class="contact-modal-close" onclick="toggleContactModal()">×</button>
+            <h3>Contact Info</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-dark);">For any questions, please feel free to reach out
+                to us.</p>
+            <div style="text-align: left;">
+                <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Suryatej Datla:</strong> <br><a
+                        href="tel:+17162471337" style="color: var(--primary-color); text-decoration: none;">+1
+                        716-247-1337</a></p>
+                <p style="margin: 0.5rem 0; font-size: 1.1rem; margin-top: 1rem;"><strong>Sruthi Pilladi:</strong>
+                    <br><a href="tel:+17167481301" style="color: var(--primary-color); text-decoration: none;">+1
+                        716-748-1301</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
