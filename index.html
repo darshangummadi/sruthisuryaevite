@@ -183,7 +183,7 @@
             <div class="rsvp-section">
                 <h2 class="rsvp-title">RSVP</h2>
 
-                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST" id="rsvpForm">
+                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST" id="rsvpForm" onsubmit="return validateRSVP(event)">
                     <!-- Redirect post-submit -->
                     <input type="hidden" name="_next"
                         value="https://darshangummadi.github.io/sruthisuryaevite/thank-you.html">
@@ -322,6 +322,23 @@
                     input.value = ''; // Reset values when hidden
                 });
             }
+        }
+
+        function validateRSVP(event) {
+            const attendingSelect = document.getElementById('attending');
+            
+            if (attendingSelect.value === 'Yes') {
+                const aug28 = document.getElementById('attend_aug28').value;
+                const aug29 = document.getElementById('attend_aug29').value;
+                const aug30 = document.getElementById('attend_aug30').value;
+                
+                if (aug28 === 'No' && aug29 === 'No' && aug30 === 'No') {
+                    alert('If you are attending, please select "Yes" for at least one of the events!');
+                    event.preventDefault();
+                    return false;
+                }
+            }
+            return true;
         }
     </script>
 
