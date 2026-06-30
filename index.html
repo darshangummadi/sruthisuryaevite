@@ -127,7 +127,6 @@
                                 <div class="event-image-title">Mehendi</div>
                                 <div class="event-image-detail">⏰ Evening</div>
                                 <div class="event-image-detail">📍 Boise (TBD)</div>
-                                <div class="event-image-detail">👗 Casual/None</div>
                             </div>
                         </div>
                     </div>
@@ -140,22 +139,20 @@
                         29th, 2026</div>
                     <div class="events-grid">
                         <div class="event-image-card">
-                            <img src="snathakam.jpeg" alt="Snathakam Ceremony">
-                            <div class="event-image-overlay">
-                                <div class="event-image-title">Snathakam</div>
-                                <div class="event-image-detail">⏰ Early Morning</div>
-                                <div class="event-image-detail">📍 Boise (TBD)</div>
-                                <div class="event-image-detail">👗 Indian</div>
-                            </div>
-                        </div>
-
-                        <div class="event-image-card">
                             <img src="ppreadyfunction.jpeg" alt="Pellikoduku & Pellikuturu Ceremonies">
                             <div class="event-image-overlay">
                                 <div class="event-image-title">Pellikoduku & Pellikuturu</div>
                                 <div class="event-image-detail">⏰ Morning & Afternoon</div>
                                 <div class="event-image-detail">📍 Boise (TBD)</div>
-                                <div class="event-image-detail">👗 Indian</div>
+                            </div>
+                        </div>
+
+                        <div class="event-image-card">
+                            <img src="snathakam.jpeg" alt="Snathakam Ceremony">
+                            <div class="event-image-overlay">
+                                <div class="event-image-title">Snathakam</div>
+                                <div class="event-image-detail">⏰ Morning</div>
+                                <div class="event-image-detail">📍 Boise (TBD)</div>
                             </div>
                         </div>
                     </div>
@@ -173,7 +170,6 @@
                                 <div class="event-image-title">Wedding Ceremony</div>
                                 <div class="event-image-detail">⏰ Morning</div>
                                 <div class="event-image-detail">📍 3160 Cool Water Ln, Emmett, ID</div>
-                                <div class="event-image-detail">👗 Indian</div>
                             </div>
                         </div>
                     </div>
@@ -183,7 +179,8 @@
             <div class="rsvp-section">
                 <h2 class="rsvp-title">RSVP</h2>
 
-                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST" id="rsvpForm" onsubmit="return validateRSVP(event)">
+                <form class="rsvp-form" action="https://formspree.io/f/mzblzqdb" method="POST" id="rsvpForm"
+                    onsubmit="return validateRSVP(event)">
                     <!-- Redirect post-submit -->
                     <input type="hidden" name="_next"
                         value="https://darshangummadi.github.io/sruthisuryaevite/thank-you.html">
@@ -326,12 +323,12 @@
 
         function validateRSVP(event) {
             const attendingSelect = document.getElementById('attending');
-            
+
             if (attendingSelect.value === 'Yes') {
                 const aug28 = document.getElementById('attend_aug28').value;
                 const aug29 = document.getElementById('attend_aug29').value;
                 const aug30 = document.getElementById('attend_aug30').value;
-                
+
                 if (aug28 === 'No' && aug29 === 'No' && aug30 === 'No') {
                     alert('HAHA stop being funny. please select "Yes" for at least one of the events!');
                     event.preventDefault();
